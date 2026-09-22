@@ -1,5 +1,5 @@
-package nivelIntermediario;
-public class Main {
+package nivelIntermediario.HerancaEmJava;
+public class HerancaDeUsuario {
     public static void main(String[] args) {
 
         //criar um usuario

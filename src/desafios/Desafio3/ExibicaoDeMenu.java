@@ -1,14 +1,18 @@
-package Desafio3;
+package desafios.Desafio3;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
+public class ExibicaoDeMenu {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int resposta = 0;
+
+        // criando uma arraylist para adicionar os ninjas sem limite de ninjas, diferente de um array comum pré-definido
         ArrayList<Ninja> listaDeNinjas = new ArrayList<Ninja>();
+
+        //enquanto a variável for verdadeira, ele repete a apresentação do menu, sendo que ao fim de cada opção, o usuário é questionado se quer vê-lo novamente
         boolean continuarMenu = true;
 
         while (continuarMenu) {
@@ -35,6 +39,7 @@ public class Main {
                         System.out.println("Ainda não há nenhum ninja cadastrado.");
                         System.out.println();
                     } else {
+                        //varre o arraylist exibindo suas informações
                         for (Ninja ninja : listaDeNinjas) {
                             ninja.mostrarInformacoes();
                             System.out.println();
@@ -43,10 +48,12 @@ public class Main {
                     break;
 
                 case 2:
+                    //Coleta as informações básicas do ninja, comuns a qualquer tipo (Comum, Uchiha ou Hyuga)
                     System.out.println("Insira as informações do ninja.");
                     System.out.println();
                     System.out.print("nome: ");
                     String nome = input.nextLine();
+                    //Valida a idade para evitar que uma entrada inválida quebre o programa
                     boolean idadeValida = false;
                     int idade = 0;
                     while (!idadeValida) {
@@ -60,7 +67,7 @@ public class Main {
                             input.nextLine();
                         }
                     }
-
+                    //usuário preenche as informações do ninja
                     System.out.print("missao: ");
                     String missao = input.nextLine();
                     System.out.print("nivel de dificuldade: ");
@@ -76,6 +83,7 @@ public class Main {
                     int tipoDeNinja = input.nextInt();
                     input.nextLine();
 
+                    // Cria o objeto do tipo correto (Uchiha, Hyuga ou Comum) e adiciona ele na lista
                     switch (tipoDeNinja) {
                         case 2:
                             System.out.println("Qual a habilidade especial dele? ");
@@ -127,7 +135,11 @@ public class Main {
                     System.out.println("Nome do ninja que você deseja atualizar as habilidades: ");
                     String buscarNinja = input.nextLine();
 
+                    //cria a variável para verificar se o ninja em questao foi encontrado, para decidir o que será mostrado ao usuário
                     boolean encontrouNinja = false;
+
+                    //o array é varrido à procura do String igual ao digitado e caso seja encontrado, verifica se é do tipo Uchiha, por exemplo
+                    //usando o instanceof para editar o conteúdo diretamente dentro dessa classe
                     for (Ninja ninja : listaDeNinjas) {
                         if (ninja.nome.equals(buscarNinja)) {
                             encontrouNinja = true;
@@ -158,6 +170,7 @@ public class Main {
                     break;
 
                 case 4:
+                    //mesmo princípio do case 3, mas com o intuito de remover informações usando o .remove
                     System.out.println("Que ninja você deseja remover do catálogo?");
                     String buscarCat = input.nextLine();
                     boolean encontrouRemocao = false;
@@ -178,6 +191,7 @@ public class Main {
                     System.out.println("Essa não é uma opção válida, desculpe.");
             }
 
+            //além de decidir se o menu será mostrado novamente ou não, capta se o usuário digitou algo incorreto ou não
             System.out.println("Deseja voltar ao menu? [s/n] ");
             String resposta2 = input.nextLine();
             while (!resposta2.equalsIgnoreCase("n") && !resposta2.equalsIgnoreCase("s")) {
@@ -192,6 +206,7 @@ public class Main {
         }
     }
 
+    //método para pular dezenas de linhas e ser mais agradável a vista na hora de ser exibido na interface do intellij
     private static void limparTela() {
         for (int i = 0; i < 50; i++) {
             System.out.println();

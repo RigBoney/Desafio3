@@ -1,4 +1,4 @@
-package Condiçoes;
+package nivelBasico;
 
 public class testeDeMetodo {
     void main(String[] args) {

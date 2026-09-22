@@ -1,7 +1,7 @@
-package nivelBasico;
+package desafios.Desafio2;
 
 import java.util.Scanner;
-public class Desafio2 {
+public class TreinoArrays {
     public static void main(String[] args) {
 
         //fazer um menuinterativo para receber o nome de varios ninjas e listar eles

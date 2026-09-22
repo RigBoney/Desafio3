@@ -1,8 +1,6 @@
-package Condiçoes;
+package nivelBasico;
 
 import java.util.Scanner;
-
-import static java.util.Scanner.*;
 
 public class EstudoSwitchCases {
     public static void main(String[] args) {

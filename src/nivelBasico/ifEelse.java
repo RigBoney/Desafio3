@@ -1,6 +1,5 @@
-package Condiçoes;
+package nivelBasico;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ifEelse {

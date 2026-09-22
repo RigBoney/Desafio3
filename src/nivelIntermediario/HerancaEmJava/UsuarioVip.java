@@ -1,4 +1,4 @@
-package nivelIntermediario;
+package nivelIntermediario.HerancaEmJava;
 
 public class UsuarioVip extends UsuarioComum {
 

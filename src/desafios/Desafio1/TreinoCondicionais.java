@@ -1,6 +1,6 @@
-package Condiçoes;
+package desafios.Desafio1;
 
-public class Desafio1 {
+public class TreinoCondicionais {
     public static void main(String[] args) {
         //catalogar ninjas de acordo com sua idade e nivel de missao que pode concluir
 

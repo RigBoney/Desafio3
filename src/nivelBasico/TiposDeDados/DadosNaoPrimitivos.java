@@ -1,6 +1,4 @@
-package TiposDeDados;
-
-import java.lang.annotation.Native;
+package nivelBasico.TiposDeDados;
 
 public class DadosNaoPrimitivos {
     public static void main(String[] args) {
